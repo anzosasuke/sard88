@@ -1,0 +1,408 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "runs": [
+    {
+      "properties": {
+        "id": 1285,
+        "version": "1.0.0",
+        "type": "source code",
+        "status": "candidate",
+        "submissionDate": "2006-01-24",
+        "language": "c",
+        "author": "MIT",
+        "description": "Realpath() overflow CERT advisory: CA-1999-03/CVE-1999-0368.\nFrom MIT benchmarks (models/wu-ftpd/f3) \nA path overflow inside realpath() function that canonicalizes a pathname.\nTo exploit this vulnerability, an attacker would first have to create a\ndeep directory structure. \nBad file: realpath-2.4.2-bad.c \nBad line numbers: 192, 262, 266, 281, 286, 291, 298, 303, 322, 327, 331, 338, 343, 356, 359, 364, 376, 383, 390, 397, 402, 410, 416, 421, 425, 432, 437 \nTaxonomy Classification: 000 040 621 1305 \nWRITE/READ = write \nWHICH BOUND = upper \nDATA TYPE = char \nMEMORY LOCATION = stack \nSCOPE = inter-file/inter-procedural \nCONTAINER = no \nINDEX/LIMIT COMPUTATION = none \nACCESS METHOD = function \nALIAS = yes, one level \nCONTROL FLOW = yes, if statement \nLOOPS = yes, while loop \nASYNCHRONY = no \nTAINT = process environment",
+        "state": "bad",
+        "cves": [
+          "CVE-1999-0368"
+        ],
+        "pairs": [
+          "1286-v1.0.0"
+        ]
+      },
+      "tool": {
+        "driver": {
+          "name": "SARD - SAMATE",
+          "fullName": "Software Assurance Reference Dataset Project",
+          "informationUri": "https://samate.nist.gov/SARD/",
+          "version": "5.0.0",
+          "organization": "NIST",
+          "supportedTaxonomies": [
+            {
+              "name": "CWE",
+              "index": 0
+            }
+          ]
+        }
+      },
+      "artifacts": [
+        {
+          "location": {
+            "uri": "src/call-realpath-bad.c"
+          },
+          "length": 3648,
+          "sourceLanguage": "c",
+          "hashes": {
+            "sha-256": "083f808387b0384c6e9ed3bbd93627e0efb6b915782abd1edad062a4a9ee0d51"
+          }
+        },
+        {
+          "location": {
+            "uri": "src/include/my-include.h"
+          },
+          "length": 2383,
+          "sourceLanguage": "c",
+          "hashes": {
+            "sha-256": "b894b734b7cd39e2a6dfb51706856f6567225e18eb0420f00d09a8d787f28f3a"
+          }
+        },
+        {
+          "location": {
+            "uri": "src/realpath-2.4.2-bad.c"
+          },
+          "length": 11312,
+          "sourceLanguage": "c",
+          "hashes": {
+            "sha-256": "2154e0d02d77da9bbecfb1e1d46d584dc58829f1e2ce4f9b0bd45f2bf5215b8f"
+          }
+        }
+      ],
+      "taxonomies": [
+        {
+          "name": "CWE",
+          "version": "4.6",
+          "informationUri": "https://cwe.mitre.org/data/published/cwe_v4.6.pdf",
+          "downloadUri": "https://cwe.mitre.org/data/xml/cwec_v4.6.xml.zip",
+          "organization": "MITRE",
+          "shortDescription": {
+            "text": "The MITRE Common Weakness Enumeration"
+          },
+          "isComprehensive": false,
+          "taxa": [
+            {
+              "id": "120",
+              "name": "Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')"
+            }
+          ]
+        }
+      ],
+      "results": [
+        {
+          "ruleId": "CWE-120",
+          "message": {
+            "text": "Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/realpath-2.4.2-bad.c",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 192
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/realpath-2.4.2-bad.c",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 262
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/realpath-2.4.2-bad.c",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 266
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/realpath-2.4.2-bad.c",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 281
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/realpath-2.4.2-bad.c",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 286
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/realpath-2.4.2-bad.c",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 291
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/realpath-2.4.2-bad.c",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 298
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/realpath-2.4.2-bad.c",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 303
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/realpath-2.4.2-bad.c",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 322
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/realpath-2.4.2-bad.c",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 327
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/realpath-2.4.2-bad.c",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 331
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/realpath-2.4.2-bad.c",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 338
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/realpath-2.4.2-bad.c",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 343
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/realpath-2.4.2-bad.c",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 356
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/realpath-2.4.2-bad.c",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 359
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/realpath-2.4.2-bad.c",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 364
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/realpath-2.4.2-bad.c",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 376
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/realpath-2.4.2-bad.c",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 383
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/realpath-2.4.2-bad.c",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 390
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/realpath-2.4.2-bad.c",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 397
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/realpath-2.4.2-bad.c",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 402
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/realpath-2.4.2-bad.c",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 410
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/realpath-2.4.2-bad.c",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 416
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/realpath-2.4.2-bad.c",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 421
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/realpath-2.4.2-bad.c",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 425
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/realpath-2.4.2-bad.c",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 432
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/realpath-2.4.2-bad.c",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 437
+                }
+              }
+            }
+          ],
+          "taxa": [
+            {
+              "toolComponent": {
+                "name": "CWE",
+                "index": 0
+              },
+              "id": "120",
+              "index": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

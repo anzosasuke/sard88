@@ -1,0 +1,129 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "runs": [
+    {
+      "properties": {
+        "id": 1291,
+        "version": "1.0.0",
+        "type": "source code",
+        "status": "candidate",
+        "submissionDate": "2006-01-24",
+        "language": "c",
+        "author": "MIT",
+        "description": "SIG-BUG: CA-1999-14.\nFrom MIT benchmarks (models/bind/b2) \nA buffer overflow caused by improper handling of SIG records\nBad file: sig-bad.c \nBad line number: 561 \nTaxonomy classification : 0060301212004",
+        "state": "bad",
+        "pairs": [
+          "1292-v1.0.0"
+        ]
+      },
+      "tool": {
+        "driver": {
+          "name": "SARD - SAMATE",
+          "fullName": "Software Assurance Reference Dataset Project",
+          "informationUri": "https://samate.nist.gov/SARD/",
+          "version": "5.0.0",
+          "organization": "NIST",
+          "supportedTaxonomies": [
+            {
+              "name": "CWE",
+              "index": 0
+            }
+          ]
+        }
+      },
+      "artifacts": [
+        {
+          "location": {
+            "uri": "src/create_msg_file.c"
+          },
+          "length": 5028,
+          "sourceLanguage": "c",
+          "hashes": {
+            "sha-256": "a36f2f83d051546a5240c7002295bf84cfdebe5be472082f5657d0df858e1b0f"
+          }
+        },
+        {
+          "location": {
+            "uri": "src/include/ns_defs.h"
+          },
+          "length": 12580,
+          "sourceLanguage": "c",
+          "hashes": {
+            "sha-256": "06d680bf8fa6e3ac28ca770c1af65ce878118f2b2e343852c0eb93239b512320"
+          }
+        },
+        {
+          "location": {
+            "uri": "src/sig-bad.c"
+          },
+          "length": 16833,
+          "sourceLanguage": "c",
+          "hashes": {
+            "sha-256": "c39257fb5f1945caf87a86d04ea39927e339e30493be1583d4182956ffd2bc07"
+          }
+        },
+        {
+          "location": {
+            "uri": "src/test.c"
+          },
+          "length": 2739,
+          "sourceLanguage": "c",
+          "hashes": {
+            "sha-256": "a3401b7481b468c05a5cf3929a420c665042d5a37d825dfa87c290cfa5f994ca"
+          }
+        }
+      ],
+      "taxonomies": [
+        {
+          "name": "CWE",
+          "version": "4.6",
+          "informationUri": "https://cwe.mitre.org/data/published/cwe_v4.6.pdf",
+          "downloadUri": "https://cwe.mitre.org/data/xml/cwec_v4.6.xml.zip",
+          "organization": "MITRE",
+          "shortDescription": {
+            "text": "The MITRE Common Weakness Enumeration"
+          },
+          "isComprehensive": false,
+          "taxa": [
+            {
+              "id": "120",
+              "name": "Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')"
+            }
+          ]
+        }
+      ],
+      "results": [
+        {
+          "ruleId": "CWE-120",
+          "message": {
+            "text": "Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/sig-bad.c",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 561
+                }
+              }
+            }
+          ],
+          "taxa": [
+            {
+              "toolComponent": {
+                "name": "CWE",
+                "index": 0
+              },
+              "id": "120",
+              "index": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

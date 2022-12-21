@@ -1,0 +1,143 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "runs": [
+    {
+      "properties": {
+        "id": 1309,
+        "version": "1.0.0",
+        "type": "source code",
+        "status": "candidate",
+        "submissionDate": "2006-02-09",
+        "language": "c",
+        "author": "MIT",
+        "description": "TXT Record Overflow: CVE-2002-0906.\nFrom MIT benchmarks (models/sendmail/s7) \nA buffer overflow poses the risk of a denial of service attack or possibly\nexecution of arbitrary code via a malicious DNS server.\nBad file: txt-dns-file-bad.c \nBad line number: 328, 330 \nTaxonomy Classification: 0001345202004",
+        "state": "bad",
+        "cves": [
+          "CVE-2002-0906"
+        ],
+        "pairs": [
+          "1310-v1.0.0"
+        ]
+      },
+      "tool": {
+        "driver": {
+          "name": "SARD - SAMATE",
+          "fullName": "Software Assurance Reference Dataset Project",
+          "informationUri": "https://samate.nist.gov/SARD/",
+          "version": "5.0.0",
+          "organization": "NIST",
+          "supportedTaxonomies": [
+            {
+              "name": "CWE",
+              "index": 0
+            }
+          ]
+        }
+      },
+      "artifacts": [
+        {
+          "location": {
+            "uri": "src/create-dns-file.c"
+          },
+          "length": 2921,
+          "sourceLanguage": "c",
+          "hashes": {
+            "sha-256": "e3db50571aa3d175f7637196ffda25146be66db9d937c7826895e160f583fea1"
+          }
+        },
+        {
+          "location": {
+            "uri": "src/include/txt-dns.h"
+          },
+          "length": 2873,
+          "sourceLanguage": "c",
+          "hashes": {
+            "sha-256": "a05e472e6b0e08b2c9dff955cb29e30ad6e42e97309c81d47f45a22ef97ee8b8"
+          }
+        },
+        {
+          "location": {
+            "uri": "src/my-util.c"
+          },
+          "length": 2861,
+          "sourceLanguage": "c",
+          "hashes": {
+            "sha-256": "672abe4890438378b07bdd7cf93081991bbb41df8087811b9f777b722fdb786d"
+          }
+        },
+        {
+          "location": {
+            "uri": "src/txt-dns-file-bad.c"
+          },
+          "length": 12438,
+          "sourceLanguage": "c",
+          "hashes": {
+            "sha-256": "27f8fb6e55d6ac63ad3c9b58b7b5c15ba5e1c8f3b4d0436895169a91416ff0cf"
+          }
+        }
+      ],
+      "taxonomies": [
+        {
+          "name": "CWE",
+          "version": "4.6",
+          "informationUri": "https://cwe.mitre.org/data/published/cwe_v4.6.pdf",
+          "downloadUri": "https://cwe.mitre.org/data/xml/cwec_v4.6.xml.zip",
+          "organization": "MITRE",
+          "shortDescription": {
+            "text": "The MITRE Common Weakness Enumeration"
+          },
+          "isComprehensive": false,
+          "taxa": [
+            {
+              "id": "119",
+              "name": "Improper Restriction of Operations within the Bounds of a Memory Buffer"
+            }
+          ]
+        }
+      ],
+      "results": [
+        {
+          "ruleId": "CWE-119",
+          "message": {
+            "text": "Improper Restriction of Operations within the Bounds of a Memory Buffer."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/txt-dns-file-bad.c",
+                  "index": 3
+                },
+                "region": {
+                  "startLine": 328
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/txt-dns-file-bad.c",
+                  "index": 3
+                },
+                "region": {
+                  "startLine": 330
+                }
+              }
+            }
+          ],
+          "taxa": [
+            {
+              "toolComponent": {
+                "name": "CWE",
+                "index": 0
+              },
+              "id": "119",
+              "index": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "runs": [
+    {
+      "properties": {
+        "id": 1301,
+        "version": "1.0.0",
+        "type": "source code",
+        "status": "candidate",
+        "submissionDate": "2006-02-09",
+        "language": "c",
+        "author": "MIT",
+        "description": "Sendmail 8.8.0/8.8.1 MIME Overflow CVE-1999-0206.\nFrom MIT benchmarks (models/sendmail/s3) \nA remote attacker can send a cleverly crafted e-mail message and trigger a\nbuffer overflow, gaining root access on the server running Sendmail.\nBad file: mime1-bad.c \nBad line number: 239, 254, 266 \nTaxonomy Classification: 0060506421304",
+        "state": "bad",
+        "cves": [
+          "CVE-1999-0206"
+        ],
+        "pairs": [
+          "1302-v1.0.0"
+        ]
+      },
+      "tool": {
+        "driver": {
+          "name": "SARD - SAMATE",
+          "fullName": "Software Assurance Reference Dataset Project",
+          "informationUri": "https://samate.nist.gov/SARD/",
+          "version": "5.0.0",
+          "organization": "NIST",
+          "supportedTaxonomies": [
+            {
+              "name": "CWE",
+              "index": 0
+            }
+          ]
+        }
+      },
+      "artifacts": [
+        {
+          "location": {
+            "uri": "src/include/my-sendmail.h"
+          },
+          "length": 5761,
+          "sourceLanguage": "c",
+          "hashes": {
+            "sha-256": "bb09f0caf07aa3359e8a01e3c099ae643eb580a20afa4df46857277e38c445e1"
+          }
+        },
+        {
+          "location": {
+            "uri": "src/main.c"
+          },
+          "length": 2478,
+          "sourceLanguage": "c",
+          "hashes": {
+            "sha-256": "bc422bec525a8deb6668c029410cb6221fe88a99280b0c2150eea2fd76f58cc4"
+          }
+        },
+        {
+          "location": {
+            "uri": "src/mime1-bad.c"
+          },
+          "length": 7091,
+          "sourceLanguage": "c",
+          "hashes": {
+            "sha-256": "30df66ccbe591543a6e7837f3e25e59412595c56ec6fa5b066ced3ed389b3b37"
+          }
+        }
+      ],
+      "taxonomies": [
+        {
+          "name": "CWE",
+          "version": "4.6",
+          "informationUri": "https://cwe.mitre.org/data/published/cwe_v4.6.pdf",
+          "downloadUri": "https://cwe.mitre.org/data/xml/cwec_v4.6.xml.zip",
+          "organization": "MITRE",
+          "shortDescription": {
+            "text": "The MITRE Common Weakness Enumeration"
+          },
+          "isComprehensive": false,
+          "taxa": [
+            {
+              "id": "119",
+              "name": "Improper Restriction of Operations within the Bounds of a Memory Buffer"
+            }
+          ]
+        }
+      ],
+      "results": [
+        {
+          "ruleId": "CWE-119",
+          "message": {
+            "text": "Improper Restriction of Operations within the Bounds of a Memory Buffer."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/mime1-bad.c",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 239
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/mime1-bad.c",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 254
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/mime1-bad.c",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 266
+                }
+              }
+            }
+          ],
+          "taxa": [
+            {
+              "toolComponent": {
+                "name": "CWE",
+                "index": 0
+              },
+              "id": "119",
+              "index": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
